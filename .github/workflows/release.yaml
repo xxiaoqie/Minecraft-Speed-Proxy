@@ -2,8 +2,6 @@ name: Build and release
 
 on:
   workflow_dispatch:
-  push:
-    tags: 'v*'
 
 jobs:
 
@@ -17,7 +15,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release
         
-      - name: find c/c++ library static or dynamic
+      - name: find c or c++ static or dynamic library
         run: find /usr  -type f -name "libc*"
         
       - name: Build
