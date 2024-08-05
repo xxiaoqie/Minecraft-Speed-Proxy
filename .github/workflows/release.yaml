@@ -1,8 +1,7 @@
 name: Build and release
 
 on:
-  push:
-#  workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
 
@@ -17,7 +16,7 @@ jobs:
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release
         
       - name: find c or c++ static or dynamic library
-        run: find /usr  -type f -name "libc*"
+        run: find /usr  -type f -name "libstdc*"
         
       - name: Build
       # Build your program with the given configuration
