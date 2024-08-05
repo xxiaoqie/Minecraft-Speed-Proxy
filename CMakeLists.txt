@@ -41,7 +41,7 @@ file(GLOB JSON_LIB_SRC "json/*.cpp")
 
 # 将源代码添加到此项目的可执行文件。
 add_executable (minecraftspeedproxy "main.cpp" "WhiteBlackList.cpp" "config.cpp" "datapackage.cpp" "logger.cpp" "proxy.cpp" ${RBS_LIB_SRC} ${RBS_LIB_HEADERS} ${JSON_LIB_HEADERS} ${JSON_LIB_SRC} )
-target_link_libraries(minecraftspeedproxy PRIVATE -static-libgcc -static-libstdc++)
+#target_link_libraries(minecraftspeedproxy PRIVATE -static-libgcc -static-libstdc++)
 set(CMAKE_EXE_LINKER_FLAGS " -static")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
